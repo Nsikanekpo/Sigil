@@ -1,14 +1,27 @@
-def remove_vowels(text):
-    vowels = "aeiouAEIOU"
-    for char in text:
-        if char not in vowels:
-           print(f"{char}",sep=" ",end=" ")
-    print() # for a new line after the output
+class Sigil:
+    def __init__(self, text):
+        if not text:
+            raise ValueError("Please write something!")
+        self.text = text
 
-# input from the user
-user_input = input("State your Desires!: ").strip().upper()
+    def __str__(self):
+        return f"{self.text}"
 
 
-# Print the text without Vowels
-remove_vowels(set(user_input))
+def main():
+    sigil = get_text()
+    print(sigil)
+
+
+
+
+
+def get_text():
+    text = input("Express your Desire: ")
+    return Sigil(text)
+    
+    
+
+if __name__ == "__main__":
+    main()
 
